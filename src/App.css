@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  background-color: #bdd8e0;
+  height: 100vh;
+  position: relative;
+  
 }
 
 .App-logo {
@@ -35,4 +39,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+.secondcomponent{
+  
+
+  /* top: 10px; */
+  /* margin-top: 20px; */
+  /* height:calc(89vh); */
+  background-color: #bdd8e0;
+  /* padding: 30px; */
+}
+
+.gaza{
+  margin-top: 20px;
 }

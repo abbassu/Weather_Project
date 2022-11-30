@@ -1,23 +1,48 @@
 import logo from './logo.svg';
+import React,{useEffect, useState} from 'react';
 import './App.css';
+import FetchApi from './Utils/For_Fetch';
+import Navbar from './components/nav';
+import Tempnow from './components/temp';
+import Arrofweather from './components/arr_weather';
 
 function App() {
+
+  const [weth,setweth]=useState("")
+  const [city,setcity]=useState("")
+  
+
+  async function getfetche(){
+  const resp= await FetchApi(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=8&units=metric&appid=8262bf24ec10f2f145746cdfd3d68631`)
+  console.log("aaaa",resp)
+      setweth(resp)
+  }
+
+  useEffect( () => {
+    getfetche()
+  }, [city]);
+
+  function pass(value){
+    setcity(value)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <Navbar hand={pass}/>
+      <div className='secondcomponent'>
+      {weth === "" ? "1" :
+      weth.cod ==="400"   ? "":
+      weth.cod ==="404"? <div>  </div>:
+      <div>
+        <Tempnow response={weth}/>
+        <Arrofweather response={weth}/>
+      </div>
+      }
+      
+      </div>
+
+      <div className='gaza'> <strong>Gaza</strong>  Sky <strong>Geeks</strong>  </div>
     </div>
   );
 }
