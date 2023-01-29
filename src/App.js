@@ -33,7 +33,8 @@ function App() {
       <div className='secondcomponent'>
       {weth === "" ? "1" :
       weth.cod ==="400"   ? "":
-      weth.cod ==="404"? <div>  </div>:
+      weth.cod ==="404"? <div> <h1>There Is No City With This Name 
+        </h1> </div>:
       <div>
         <Tempnow response={weth}/>
         <Arrofweather response={weth}/>

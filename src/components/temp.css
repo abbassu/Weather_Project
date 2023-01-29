@@ -37,8 +37,8 @@ background-color: ;
     grid-template-columns: repeat(auto-fill,minmax(120px,1fr));
     gap: 0 20px ;
     margin-bottom: 30px;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 18%;
+    padding-right: 17%;
     /* background-color: #1366d6; */
     padding: auto;
 }
