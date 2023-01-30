@@ -13,7 +13,7 @@ return(
     let date= new Date(array_of_card[ind]?.dt_txt).getHours()
     return(
         <div key={ind} className="hour" >
-            <span></span>
+            <span>`</span>
                 <div className="incard">
                     { date >= 12 ? `${date}:00` : `0${date}:00` }
                 </div>
